@@ -1,0 +1,23 @@
+<center><h2>SignUp Page</h2></center>
+
+{{#if hasErrors}}
+       <div class="alert alert-danger">
+           {{#each meassages}}
+             <p>{{this}}</p>
+           {{/each}}
+       </div>
+
+{{/if}}
+<form action="/signup " method="POST">
+    <div class="form-group">
+    <label for="email">email</label>
+     <input type="text" id ="email"name="email" class="form-control">
+</div>
+<div class="form-group">
+        <label for="pass">Password</label>
+         <input type="password" id ="pass"name="pass" class="form-control">
+    </div>
+     <input type="hidden" name="_csrf"  value= {{csrfToken}} >
+    <button type="submit">Signup</button>
+    csrfToken
+    </form>
